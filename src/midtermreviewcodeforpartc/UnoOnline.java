@@ -14,6 +14,25 @@ import java.util.Scanner;
  * of possible users. To be used as the beginning code for MidtermReview C.
  * @author dancye, 2019
  */
+public class PasswordValidator {
+    public static boolean validatePassword(String password) {
+        // Password must have at least 8 characters
+        if (password.length() < 8) {
+            return false;
+        }
+
+        // Password must contain at least one special character
+        boolean containsSpecialChar = false;
+        for (int i = 0; i < password.length(); i++) {
+            if (!Character.isLetterOrDigit(password.charAt(i))) {
+                containsSpecialChar = true;
+                break;
+            }
+        }
+
+        return containsSpecialChar;
+    }
+}
 public class UnoOnline 
 {
     private User users[] = new User[100];//room for 100 online players!
@@ -64,4 +83,4 @@ public class UnoOnline
     }//end run method
    
     
-}//end class
+//end class
