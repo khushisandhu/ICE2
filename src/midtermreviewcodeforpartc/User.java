@@ -10,6 +10,27 @@ package midtermreviewcodeforpartc;
  * The user has a name and a password.
  * @author dancye, 2019
  */
+
+public class PasswordValidator {
+    public static boolean validatePassword(String password) {
+        // Password must have at least 8 characters
+        if (password.length() < 8) {
+            return false;
+        }
+
+        // Password must contain at least one special character
+        boolean containsSpecialChar = false;
+        for (int i = 0; i < password.length(); i++) {
+            if (!Character.isLetterOrDigit(password.charAt(i))) {
+                containsSpecialChar = true;
+                break;
+            }
+        }
+
+        return containsSpecialChar;
+    }
+}
+
 public class User 
 {
     private String name;
